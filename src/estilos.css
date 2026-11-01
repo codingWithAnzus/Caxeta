@@ -1,0 +1,119 @@
+:root {
+  --fundo: #0e1116;
+  --cartao: #171c24;
+  --cartao-2: #1f2630;
+  --borda: #2a323d;
+  --texto: #f1f5f9;
+  --texto-suave: #9aa6b5;
+  --destaque: #34d399;
+  --destaque-texto: #052e1f;
+  --ok: #4ade80;
+  --alerta: #fbbf24;
+  --perigo: #f87171;
+  --apagado: #6b7480;
+
+  --raio: 20px;
+  --raio-grande: 28px;
+  --espaco: 16px;
+  --espaco-p: 8px;
+  --alvo: 56px;
+
+  --topo: env(safe-area-inset-top, 0px);
+  --base: env(safe-area-inset-bottom, 0px);
+  --esq: env(safe-area-inset-left, 0px);
+  --dir: env(safe-area-inset-right, 0px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  color-scheme: dark;
+  background: var(--fundo);
+}
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.3;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+}
+
+.tela {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--topo) + var(--espaco)) calc(var(--dir) + var(--espaco))
+    calc(var(--base) + var(--espaco)) calc(var(--esq) + var(--espaco));
+}
+
+.tela-inicial {
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco);
+  text-align: center;
+}
+
+.titulo {
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--destaque);
+}
+
+.subtitulo {
+  margin: 0 0 var(--espaco);
+  color: var(--texto-suave);
+}
+
+.btn {
+  min-height: var(--alvo);
+  padding: 0 32px;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: var(--cartao-2);
+  color: var(--texto);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primario {
+  width: 100%;
+  max-width: 320px;
+  border-color: transparent;
+  background: var(--destaque);
+  color: var(--destaque-texto);
+  font-size: 1.25rem;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
